@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactElement, useEffect, useState } from "react"
 import { Box, makeStyles, useTheme } from "@material-ui/core"
 import { DataGrid, GridColDef } from "@material-ui/data-grid"
 import Loader from 'react-loader-spinner'
@@ -50,7 +50,8 @@ const COLUMNS: GridColDef[] = [
 const useStyles = makeStyles({
     grid: {
         marginInline: 16,
-        flexGrow: 1
+        flexGrow: 1,
+        marginBottom: 8
     },
     loader: {
         margin: 'auto',
@@ -62,6 +63,22 @@ export const ShipmentsPage: React.FC = () => {
     const classes = useStyles()
     const useShipmentsResult = useShipments()
     const theme = useTheme()
+    const [isAutoPageSizeOn, setIsAutoPageSizeOn] = useState(true)
+
+    useEffect(() => {
+        const MIN_WINDOW_SIZE_FOR_AUTO_PAGE_SIZE = 338
+
+        const updateAutoPageSize = () => {
+            setIsAutoPageSizeOn(window.innerHeight > MIN_WINDOW_SIZE_FOR_AUTO_PAGE_SIZE)
+        }
+
+        window.addEventListener('resize', updateAutoPageSize)
+        updateAutoPageSize()
+
+        return () => {
+            window.removeEventListener('resize', updateAutoPageSize)
+        }
+    }, [])
 
     let component: ReactElement
     switch (useShipmentsResult.status) {
@@ -70,8 +87,9 @@ export const ShipmentsPage: React.FC = () => {
                 className={classes.grid}
                 rows={useShipmentsResult.shipments}
                 columns={COLUMNS}
-                pageSize={20}
+                pageSize={3}
                 disableSelectionOnClick
+                autoPageSize={isAutoPageSizeOn}
             />
             break
         case 'LOADING':
