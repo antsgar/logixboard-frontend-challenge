@@ -54,8 +54,7 @@ const useStyles = makeStyles({
     },
     loader: {
         margin: 'auto',
-        width: 'fit-content',
-        marginTop: 200
+        width: 'fit-content'
     }
 })
 
@@ -74,7 +73,7 @@ export const ShipmentsPage: React.FC = () => {
                 pageSize={20}
                 disableSelectionOnClick
             />
-            break;
+            break
         case 'LOADING':
             component = <Box className={classes.loader}>
                 <Loader type="Grid" color={theme.palette.primary.main} />
