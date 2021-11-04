@@ -1,8 +1,7 @@
-import { ReactElement, useEffect, useState } from "react"
-import { Box, makeStyles, useTheme } from "@material-ui/core"
+import { useEffect, useState } from "react"
+import { makeStyles } from "@material-ui/core"
 import { DataGrid, GridColDef } from "@material-ui/data-grid"
-import Loader from 'react-loader-spinner'
-import { useShipments } from "../data/use-shipments"
+import { WithShipments } from "../components/WithShipments"
 
 const COLUMNS: GridColDef[] = [
     {
@@ -52,17 +51,11 @@ const useStyles = makeStyles({
         marginInline: 16,
         flexGrow: 1,
         marginBottom: 8
-    },
-    loader: {
-        margin: 'auto',
-        width: 'fit-content'
     }
 })
 
 export const ShipmentsPage: React.FC = () => {
     const classes = useStyles()
-    const useShipmentsResult = useShipments()
-    const theme = useTheme()
     const [isAutoPageSizeOn, setIsAutoPageSizeOn] = useState(true)
 
     useEffect(() => {
@@ -80,27 +73,12 @@ export const ShipmentsPage: React.FC = () => {
         }
     }, [])
 
-    let component: ReactElement
-    switch (useShipmentsResult.status) {
-        case 'SUCCESS':
-            component = <DataGrid
-                className={classes.grid}
-                rows={useShipmentsResult.shipments}
-                columns={COLUMNS}
-                pageSize={3}
-                disableSelectionOnClick
-                autoPageSize={isAutoPageSizeOn}
-            />
-            break
-        case 'LOADING':
-            component = <Box className={classes.loader}>
-                <Loader type="Grid" color={theme.palette.primary.main} />
-            </Box >
-            break
-        case 'ERROR':
-            component = <p>Error</p>
-            break
-    }
-
-    return component
+    return WithShipments(({ shipments }) => <DataGrid
+        className={classes.grid}
+        rows={shipments}
+        columns={COLUMNS}
+        pageSize={3}
+        disableSelectionOnClick
+        autoPageSize={isAutoPageSizeOn}
+    />)
 }
