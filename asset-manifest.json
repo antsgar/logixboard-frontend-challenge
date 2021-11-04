@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/logixboard/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/logixboard/static/js/main.539b69fc.chunk.js",
-    "main.js.map": "/logixboard/static/js/main.539b69fc.chunk.js.map",
-    "runtime-main.js": "/logixboard/static/js/runtime-main.02c75421.js",
-    "runtime-main.js.map": "/logixboard/static/js/runtime-main.02c75421.js.map",
-    "static/js/2.8270735e.chunk.js": "/logixboard/static/js/2.8270735e.chunk.js",
-    "static/js/2.8270735e.chunk.js.map": "/logixboard/static/js/2.8270735e.chunk.js.map",
-    "static/js/3.21ec2147.chunk.js": "/logixboard/static/js/3.21ec2147.chunk.js",
-    "static/js/3.21ec2147.chunk.js.map": "/logixboard/static/js/3.21ec2147.chunk.js.map",
-    "index.html": "/logixboard/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/logixboard/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.8270735e.chunk.js.LICENSE.txt": "/logixboard/static/js/2.8270735e.chunk.js.LICENSE.txt",
-    "static/media/logo-trimmed_transparent-background.498940b4.png": "/logixboard/static/media/logo-trimmed_transparent-background.498940b4.png"
+    "main.css": "/logixboard-frontend-challenge/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/logixboard-frontend-challenge/static/js/main.fbc8f275.chunk.js",
+    "main.js.map": "/logixboard-frontend-challenge/static/js/main.fbc8f275.chunk.js.map",
+    "runtime-main.js": "/logixboard-frontend-challenge/static/js/runtime-main.623863a7.js",
+    "runtime-main.js.map": "/logixboard-frontend-challenge/static/js/runtime-main.623863a7.js.map",
+    "static/js/2.5484a5eb.chunk.js": "/logixboard-frontend-challenge/static/js/2.5484a5eb.chunk.js",
+    "static/js/2.5484a5eb.chunk.js.map": "/logixboard-frontend-challenge/static/js/2.5484a5eb.chunk.js.map",
+    "static/js/3.21ec2147.chunk.js": "/logixboard-frontend-challenge/static/js/3.21ec2147.chunk.js",
+    "static/js/3.21ec2147.chunk.js.map": "/logixboard-frontend-challenge/static/js/3.21ec2147.chunk.js.map",
+    "index.html": "/logixboard-frontend-challenge/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/logixboard-frontend-challenge/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.5484a5eb.chunk.js.LICENSE.txt": "/logixboard-frontend-challenge/static/js/2.5484a5eb.chunk.js.LICENSE.txt",
+    "static/media/logo-trimmed_transparent-background.498940b4.png": "/logixboard-frontend-challenge/static/media/logo-trimmed_transparent-background.498940b4.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.02c75421.js",
-    "static/js/2.8270735e.chunk.js",
+    "static/js/runtime-main.623863a7.js",
+    "static/js/2.5484a5eb.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.539b69fc.chunk.js"
+    "static/js/main.fbc8f275.chunk.js"
   ]
 }
