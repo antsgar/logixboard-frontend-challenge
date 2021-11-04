@@ -70,7 +70,7 @@ export const WeekDayColumn: React.FC<{ title: string; shipments: Shipment[] }> =
             </Typography>
             <Box className={classes.cardsContainer}>
                 {shipments.map((shipment) => (
-                    <Grid key={shipment.houseBillNumber} item className={classes.shipmentContainer}>
+                    <Grid key={shipment.id} item className={classes.shipmentContainer}>
                         <ShipmentCard shipment={shipment} />
                     </Grid>
                 ))}
