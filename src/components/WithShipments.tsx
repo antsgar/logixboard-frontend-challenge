@@ -1,4 +1,4 @@
-import { Box, makeStyles, useTheme } from '@material-ui/core'
+import { Box, Button, makeStyles, Typography, useTheme } from '@material-ui/core'
 import React, { ReactElement } from 'react'
 import Loader from 'react-loader-spinner'
 import { Shipment } from '../data/Shipment'
@@ -8,6 +8,14 @@ const useStyles = makeStyles({
   loader: {
       margin: 'auto',
       width: 'fit-content'
+  },
+  errorContainer: {
+      margin: 'auto',
+      display: 'flex',
+      flexDirection: 'column'
+  },
+  reloadButton: {
+      margin: '16px auto 0',
   }
 })
 
@@ -27,7 +35,14 @@ export const WithShipments = (PageContainer: React.FC<{ shipments: Shipment[] }>
           </Box >
           break
       case 'ERROR':
-          component = <p>Error</p>
+          component = <Box className={classes.errorContainer}>
+                <Typography>
+                    There was an error loading the shipments data. Please try again.
+                </Typography>
+                <Button variant="contained" color="primary" disableElevation onClick={() => window.location.reload()} className={classes.reloadButton}>
+                    Reload
+                </Button>
+            </Box>
           break
   }
 
