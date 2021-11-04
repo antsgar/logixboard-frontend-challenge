@@ -11,7 +11,12 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export const WeekDays: React.FC<{ shipments: Shipment[] }> = ({ shipments }) => {
+export const WeekDays: React.FC<{ shipments: Shipment[], sortProperty: string, allowedModes: string[], allowedStatus: string[] }> = ({
+  shipments,
+  sortProperty,
+  allowedModes,
+  allowedStatus
+}) => {
   const classes = useStyles(shipments.length)
   const DISPLAYED_DAYS = 7
 
@@ -25,17 +30,20 @@ export const WeekDays: React.FC<{ shipments: Shipment[] }> = ({ shipments }) => 
     return titles
   })
 
+  console.log(allowedModes)
+
   const shipmentsByWeekday = useMemo(() => {
     const today = dayjs().startOf('day')
-    const sortedShipments = shipments.sort((shipmentA, shipmentB) => {
-      if (shipmentA.houseBillNumber > shipmentB.houseBillNumber) {
+    const filteredShipments = shipments.filter(shipment => allowedModes.includes(shipment.mode) && allowedStatus.includes(shipment.status))
+    const sortedShipments = (filteredShipments as { [key: string]: any }[]).sort((shipmentA, shipmentB) => {
+      if (shipmentA[sortProperty] > shipmentB[sortProperty]) {
         return 1
       }
-      if (shipmentB.houseBillNumber > shipmentA.houseBillNumber) {
+      if (shipmentB[sortProperty] > shipmentA[sortProperty]) {
         return -1
       }
       return 0
-    })
+    }) as Shipment[]
     const groupedShipments: Shipment[][] = [...Array(DISPLAYED_DAYS)].map(() => [])
 
     for (const shipment of sortedShipments) {
@@ -48,7 +56,7 @@ export const WeekDays: React.FC<{ shipments: Shipment[] }> = ({ shipments }) => 
     }
 
     return groupedShipments
-  }, [shipments])
+  }, [shipments, sortProperty, allowedModes, allowedStatus])
 
   return <Grid container className={classes.container}>
     {shipmentsByWeekday.map((shipments, index) => (

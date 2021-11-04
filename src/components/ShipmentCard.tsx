@@ -1,5 +1,6 @@
 import { Box, Card, Chip, Grid, makeStyles, Typography } from "@material-ui/core"
 import { Shipment, ShipmentMode, ShipmentStatus } from "../data/Shipment"
+import { StatusOption } from "./Dashboard"
 
 const useStyles = makeStyles({
   card: {
@@ -61,23 +62,6 @@ export const ShipmentCard: React.FC<{ shipment: Shipment }> = ({ shipment }) => 
     }
   }
 
-  const stringForShipmentStatus = (status: ShipmentStatus) => {
-    switch (status) {
-      case 'ARRIVED': 
-        return 'Arrived'
-      case 'CANCELLED':
-        return 'Cancelled'
-      case 'IN_TRANSIT':
-        return 'In transit'
-      case 'CUSTOMS_HOLD':
-        return 'Held at customs'
-      case 'ROLL_OVER':
-        return 'Rolled over'
-      case 'TRANSPORT_ERROR':
-        return 'Transport error'
-    }
-  }
-
   const classForShipmentStatus = (status: ShipmentStatus) => {
     switch (status) {
       case 'ARRIVED':
@@ -106,7 +90,7 @@ export const ShipmentCard: React.FC<{ shipment: Shipment }> = ({ shipment }) => 
     <Grid container className={classes.shipmentIndicatorContainer}>
       <Box className={`${classes.shipmentStatusIndicator} ${classForShipmentStatus(shipment.status)}`} />
       <Typography variant="caption">
-        {stringForShipmentStatus(shipment.status)}
+        {StatusOption[shipment.status]}
       </Typography>
     </Grid>
   </Card>
