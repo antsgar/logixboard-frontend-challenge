@@ -12,7 +12,8 @@ const useStyles = makeStyles({
   errorContainer: {
       margin: 'auto',
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      padding: 32
   },
   reloadButton: {
       margin: '16px auto 0',

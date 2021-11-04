@@ -28,14 +28,18 @@ export enum StatusOption {
 const useStyles = makeStyles(theme => ({
   formControl: {
     display: 'flex',
-    margin: '16px 24px',
+    margin: '0 24px',
     [theme.breakpoints.down('md')]: {
       display: 'none'
     }
   },
   formGroup: {
+    marginTop: 16,
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+  },
+  optionFormGroup: {
+    marginBottom: 16
   },
   filterFormGroup: {
     display: 'flex',
@@ -78,7 +82,7 @@ export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) =>
     <>
       <FormControl component="fieldset" className={classes.formControl}>
         <FormGroup row className={classes.formGroup}>
-          <FormGroup>
+          <FormGroup className={classes.optionFormGroup}>
             <FormLabel component="legend">Sort by</FormLabel>
             <FormGroup row>
               <RadioGroup row aria-label="sort" name="sort" value={sortProperty} onChange={(event) => setSortProperty(event.target.value)}>
@@ -92,7 +96,7 @@ export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) =>
               </RadioGroup>
             </FormGroup>
           </FormGroup>
-          <FormGroup>
+          <FormGroup className={classes.optionFormGroup}>
             <FormLabel component="legend">Filter</FormLabel>
             <FormGroup row className={classes.filterFormGroup}>
               <FormLabel component="legend" className={classes.filterLabel}>Shipment mode</FormLabel>
