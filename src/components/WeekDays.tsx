@@ -90,7 +90,7 @@ export const WeekDays: React.FC<{ shipments: Shipment[] }> = ({ shipments }) => 
 
   return <Grid container className={classes.container}>
     {shipmentsByWeekday.map((shipments, index) => (
-      <Grid container item md xs={12} direction="column" className={`${classes.weekDayContainer} ${shipments.length === 0 ? classes.dimmedWeekDayContainer : ''}`}>
+      <Grid key={index} container item md xs={12} direction="column" className={`${classes.weekDayContainer} ${shipments.length === 0 ? classes.dimmedWeekDayContainer : ''}`}>
         <h4 className={classes.title}>
           {weekDayTitles[index]}
         </h4>
@@ -98,7 +98,7 @@ export const WeekDays: React.FC<{ shipments: Shipment[] }> = ({ shipments }) => 
           {shipments.length > 0 ? shipments.length : 'No'} {shipments.length === 1 ? 'shipment' : 'shipments'} arriving
         </h5>
         {shipments.map(shipment => (
-          <Grid item className={classes.shipmentContainer}>
+          <Grid key={shipment.houseBillNumber} item className={classes.shipmentContainer}>
             <ShipmentCard shipment={shipment} />
           </Grid>
         ))}
