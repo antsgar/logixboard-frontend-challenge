@@ -7,6 +7,9 @@ import { WeekDayColumn } from "./WeekDayColumn"
 const useStyles = makeStyles(theme => ({
   container: {
     overflow: 'hidden',
+    [theme.breakpoints.down('sm')]: {
+      overflow: 'auto'
+    },
     marginBottom: 8,
   }
 }))

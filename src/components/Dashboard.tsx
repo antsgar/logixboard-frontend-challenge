@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   formControl: {
     display: 'flex',
     margin: '0 24px',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none'
     }
   },

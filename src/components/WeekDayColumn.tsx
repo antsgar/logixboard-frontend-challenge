@@ -8,22 +8,20 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.light,
     padding: '16px 0',
     borderRadius: 8,
-    [theme.breakpoints.up('md')]: {
-      margin: '0 4px',
+    margin: '0 4px',
+    '&:first-child': {
+      marginLeft: 16
+    },
+    '&:last-child': {
+      marginRight: 16
+    },
+    [theme.breakpoints.down('sm')]: {
+      margin: '8px 16px',
       '&:first-child': {
         marginLeft: 16
       },
       '&:last-child': {
         marginRight: 16
-      },
-    },
-    [theme.breakpoints.down('md')]: {
-      margin: '4px 8px',
-      '&:first-child': {
-        marginTop: 16
-      },
-      '&:last-child': {
-        marginBottom: 16
       },
     },
     flexWrap: 'nowrap',
@@ -58,7 +56,7 @@ export const WeekDayColumn: React.FC<{ title: string, shipments: Shipment[] }> =
     container
     item
     md
-    xs={12}
+    sm={12}
     direction="column"
     className={`${classes.weekDayContainer} ${shipments.length === 0 ? classes.dimmedWeekDayContainer : ''}`}
   >
