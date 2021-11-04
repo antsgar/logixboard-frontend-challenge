@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   },
   cardsContainer: {
     overflow: 'auto',
-    padding: '0 16px'
+    padding: '0 16px 2px'
   },
   shipmentContainer: {
     '&:not(:last-child)': {
