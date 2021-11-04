@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/logixboard-frontend-challenge/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/logixboard-frontend-challenge/static/js/main.8d8c10ff.chunk.js",
-    "main.js.map": "/logixboard-frontend-challenge/static/js/main.8d8c10ff.chunk.js.map",
+    "main.js": "/logixboard-frontend-challenge/static/js/main.539b69fc.chunk.js",
+    "main.js.map": "/logixboard-frontend-challenge/static/js/main.539b69fc.chunk.js.map",
     "runtime-main.js": "/logixboard-frontend-challenge/static/js/runtime-main.623863a7.js",
     "runtime-main.js.map": "/logixboard-frontend-challenge/static/js/runtime-main.623863a7.js.map",
     "static/js/2.5484a5eb.chunk.js": "/logixboard-frontend-challenge/static/js/2.5484a5eb.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.623863a7.js",
     "static/js/2.5484a5eb.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.8d8c10ff.chunk.js"
+    "static/js/main.539b69fc.chunk.js"
   ]
 }
