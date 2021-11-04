@@ -60,7 +60,7 @@ export const WeekDayColumn: React.FC<{ title: string, shipments: Shipment[] }> =
     direction="column"
     className={`${classes.weekDayContainer} ${shipments.length === 0 ? classes.dimmedWeekDayContainer : ''}`}
   >
-    <Typography variant="h2" className={classes.title}>
+    <Typography variant="h5" className={classes.title}>
       {title}
     </Typography>
     <Typography variant="subtitle1" className={classes.subtitle}>
