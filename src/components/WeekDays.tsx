@@ -27,9 +27,18 @@ export const WeekDays: React.FC<{ shipments: Shipment[] }> = ({ shipments }) => 
 
   const shipmentsByWeekday = useMemo(() => {
     const today = dayjs().startOf('day')
+    const sortedShipments = shipments.sort((shipmentA, shipmentB) => {
+      if (shipmentA.houseBillNumber > shipmentB.houseBillNumber) {
+        return 1
+      }
+      if (shipmentB.houseBillNumber > shipmentA.houseBillNumber) {
+        return -1
+      }
+      return 0
+    })
     const groupedShipments: Shipment[][] = [...Array(DISPLAYED_DAYS)].map(() => [])
 
-    for (const shipment of shipments) {
+    for (const shipment of sortedShipments) {
         const { estimatedArrival } = shipment
         const arrivalDate = dayjs(estimatedArrival)
         const dateDiff = arrivalDate.diff(today, 'day')
