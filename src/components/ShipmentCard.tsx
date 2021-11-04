@@ -1,4 +1,4 @@
-import { Box, Card, Chip, Grid, makeStyles } from "@material-ui/core"
+import { Box, Card, Chip, Grid, makeStyles, Typography } from "@material-ui/core"
 import { Shipment, ShipmentMode, ShipmentStatus } from "../data/Shipment"
 
 const useStyles = makeStyles({
@@ -94,20 +94,20 @@ export const ShipmentCard: React.FC<{ shipment: Shipment }> = ({ shipment }) => 
   }
 
   return <Card className={classes.card}>
-    <p className={classes.cardInformationItem}>
+    <Typography className={classes.cardInformationItem}>
       <strong>
         {shipment.houseBillNumber}
       </strong>
-    </p>
-    <p className={classes.cardInformationItem}>
+    </Typography>
+    <Typography className={classes.cardInformationItem}>
       {shipment.client}
-    </p>
+    </Typography>
     <Chip label={shipment.mode} size="small" className={`${classes.shipmentModeChip} ${classForShipmentMode(shipment.mode)}`} />
     <Grid container className={classes.shipmentIndicatorContainer}>
       <Box className={`${classes.shipmentStatusIndicator} ${classForShipmentStatus(shipment.status)}`} />
-      <Box>
+      <Typography variant="caption">
         {stringForShipmentStatus(shipment.status)}
-      </Box>
+      </Typography>
     </Grid>
   </Card>
 }

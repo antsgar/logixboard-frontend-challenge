@@ -13,6 +13,14 @@ const theme = createTheme({
       main: '#2AC3AD',
       light: 'rgba(42, 195, 173, 0.5)'
     }
+  },
+  typography: {
+    h2: {
+      fontSize: '1.2rem'
+    },
+    subtitle1: {
+      fontSize: '0.8rem'
+    }
   }
 })
 
