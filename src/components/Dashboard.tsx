@@ -90,7 +90,7 @@ export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) =>
                   <FormControlLabel
                     key={option}
                     value={option}
-                    control={<Radio size="small" />}
+                    control={<Radio size="small" color="primary" />}
                     label={<Typography variant="caption">{optionName}</Typography>} 
                   />
                 ))}
@@ -105,7 +105,13 @@ export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) =>
                 {Object.entries(ModeOption).map(([option, optionName]) => (
                   <FormControlLabel
                     key={option}
-                    control={<Checkbox size="small" name={option} defaultChecked={true} onChange={handleFilterChange(allowedModes, setAllowedModes)} />}
+                    control={<Checkbox
+                        size="small"
+                        color="primary"
+                        name={option}
+                        defaultChecked={true}
+                        onChange={handleFilterChange(allowedModes, setAllowedModes)}
+                      />}
                     label={<Typography variant="caption">{optionName}</Typography>}
                   />
                 ))}
@@ -115,7 +121,13 @@ export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) =>
                 {Object.entries(StatusOption).map(([option, optionName]) => (
                   <FormControlLabel
                     key={option}
-                    control={<Checkbox size="small" name={option} defaultChecked={true} onChange={handleFilterChange(allowedStatus, setAllowedStatus)} />}
+                    control={<Checkbox
+                        size="small"
+                        color="primary"
+                        name={option}
+                        defaultChecked={true}
+                        onChange={handleFilterChange(allowedStatus, setAllowedStatus)}
+                      />}
                     label={<Typography variant="caption">{optionName}</Typography>}
                   />
                 ))}
