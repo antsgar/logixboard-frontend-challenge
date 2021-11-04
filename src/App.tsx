@@ -1,4 +1,4 @@
-import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core';
+import { createTheme, Grid, makeStyles, ThemeProvider } from '@material-ui/core';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 
 import './App.css';
@@ -18,17 +18,20 @@ const theme = createTheme({
 const useStyles = makeStyles({
   layoutContainer: {
     height: '100%',
-    display: 'flex',
-    flexDirection: 'column'
   }
 })
 
 export const App = () => {
   const classes = useStyles()
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <div className={classes.layoutContainer}>
+        <Grid
+          container
+          direction="column"
+          className={classes.layoutContainer}
+        >
           <Navbar />
           <Switch>
             <Route exact path="/">
@@ -41,7 +44,7 @@ export const App = () => {
               <ShipmentsPage />
             </Route>
           </Switch>
-        </div>
+        </Grid>
       </Router>
     </ThemeProvider>
   );
