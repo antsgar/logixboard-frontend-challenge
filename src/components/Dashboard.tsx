@@ -88,6 +88,7 @@ export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) =>
               <RadioGroup row aria-label="sort" name="sort" value={sortProperty} onChange={(event) => setSortProperty(event.target.value)}>
                 {Object.entries(SortOption).map(([option, optionName]) => (
                   <FormControlLabel
+                    key={option}
                     value={option}
                     control={<Radio size="small" />}
                     label={<Typography variant="caption">{optionName}</Typography>} 
@@ -103,6 +104,7 @@ export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) =>
               <FormGroup row className={classes.filterFormGroup}>
                 {Object.entries(ModeOption).map(([option, optionName]) => (
                   <FormControlLabel
+                    key={option}
                     control={<Checkbox size="small" name={option} defaultChecked={true} onChange={handleFilterChange(allowedModes, setAllowedModes)} />}
                     label={<Typography variant="caption">{optionName}</Typography>}
                   />
@@ -112,6 +114,7 @@ export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) =>
               <FormGroup row className={classes.filterFormGroup}>
                 {Object.entries(StatusOption).map(([option, optionName]) => (
                   <FormControlLabel
+                    key={option}
                     control={<Checkbox size="small" name={option} defaultChecked={true} onChange={handleFilterChange(allowedStatus, setAllowedStatus)} />}
                     label={<Typography variant="caption">{optionName}</Typography>}
                   />
