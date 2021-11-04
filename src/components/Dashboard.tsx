@@ -25,10 +25,13 @@ export enum StatusOption {
   TRANSPORT_ERROR = 'Transport error'
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   formControl: {
     display: 'flex',
-    margin: '16px 24px'
+    margin: '16px 24px',
+    [theme.breakpoints.down('md')]: {
+      display: 'none'
+    }
   },
   formGroup: {
     display: 'flex',
@@ -47,7 +50,7 @@ const useStyles = makeStyles({
     fontWeight: 'bold',
     fontSize: '0.8rem',
   }
-})
+}))
 
 export const Dashboard: React.FC<{ shipments: Shipment[] }> = ({ shipments }) => {
   const classes = useStyles()
