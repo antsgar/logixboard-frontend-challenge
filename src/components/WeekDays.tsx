@@ -33,8 +33,6 @@ export const WeekDays: React.FC<{
         return titles
     })
 
-    console.log(allowedModes)
-
     const shipmentsByWeekday = useMemo(() => {
         const today = dayjs().startOf('day')
         const filteredShipments = shipments.filter(
