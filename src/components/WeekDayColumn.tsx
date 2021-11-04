@@ -1,20 +1,12 @@
-import { Grid, makeStyles, Typography } from "@material-ui/core"
+import { Box, Grid, makeStyles, Typography } from "@material-ui/core"
 import { Shipment } from "../data/Shipment"
 import { ShipmentCard } from "./ShipmentCard"
 
 const useStyles = makeStyles(theme => ({
-  title: {
-    margin: 0
-  },
-  subtitle: {
-    margin: 0,
-    fontWeight: 'normal',
-    marginBottom: 16
-  },
   weekDayContainer: {
     maxHeight: '100%',
     backgroundColor: theme.palette.primary.light,
-    padding: 16,
+    padding: '16px 0',
     borderRadius: 8,
     [theme.breakpoints.up('md')]: {
       margin: '0 4px',
@@ -37,8 +29,20 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'nowrap',
     overflow: 'auto'
   },
+  title: {
+    margin: '0 16px'
+  },
+  subtitle: {
+    margin: '0 16px',
+    fontWeight: 'normal',
+    marginBottom: 16
+  },
   dimmedWeekDayContainer: {
     backgroundColor: 'lightgray'
+  },
+  cardsContainer: {
+    overflow: 'auto',
+    padding: '0 16px'
   },
   shipmentContainer: {
     '&:not(:last-child)': {
@@ -64,10 +68,12 @@ export const WeekDayColumn: React.FC<{ title: string, shipments: Shipment[] }> =
     <Typography variant="subtitle1" className={classes.subtitle}>
       {shipments.length > 0 ? shipments.length : 'No'} {shipments.length === 1 ? 'shipment' : 'shipments'} arriving
     </Typography>
-    {shipments.map(shipment => (
-      <Grid key={shipment.houseBillNumber} item className={classes.shipmentContainer}>
-        <ShipmentCard shipment={shipment} />
-      </Grid>
-    ))}
+    <Box className={classes.cardsContainer}>
+      {shipments.map(shipment => (
+        <Grid key={shipment.houseBillNumber} item className={classes.shipmentContainer}>
+          <ShipmentCard shipment={shipment} />
+        </Grid>
+      ))}
+    </Box>
   </Grid>
 }

@@ -6,7 +6,7 @@ import { WeekDayColumn } from "./WeekDayColumn"
 
 const useStyles = makeStyles(theme => ({
   container: {
-    maxHeight: '100%',
+    overflow: 'hidden',
     marginBottom: 8,
   }
 }))
