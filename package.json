@@ -1,4 +1,5 @@
 {
+  "homepage": "https://antsgar.github.io/logixboard-frontend-challenge",
   "name": "frontend-challenge-two",
   "version": "0.1.0",
   "private": true,
@@ -17,6 +18,7 @@
     "beautiful-react-hooks": "^0.35.0",
     "date-fns": "^2.23.0",
     "dayjs": "^1.10.7",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-loader-spinner": "^4.0.0",
@@ -29,7 +31,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
