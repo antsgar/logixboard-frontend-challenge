@@ -1,4 +1,4 @@
 export enum AppRoute {
-    DASHBOARD = '/dashboard',
-    SHIPMENTS = '/shipments',
+    DASHBOARD = '/logixboard-frontend-challenge/dashboard',
+    SHIPMENTS = '/logixboard-frontend-challenge/shipments',
 }

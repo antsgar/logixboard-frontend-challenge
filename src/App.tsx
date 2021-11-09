@@ -40,13 +40,13 @@ export const App = () => {
                 <Box className={classes.layoutContainer}>
                     <Navbar />
                     <Switch>
-                        <Route exact path="/">
-                            <Redirect to="/dashboard" />
+                        <Route exact path="/logixboard-frontend-challenge">
+                            <Redirect to="/logixboard-frontend-challenge/dashboard" />
                         </Route>
-                        <Route path="/dashboard">
+                        <Route path="/logixboard-frontend-challenge/dashboard">
                             <DashboardPage />
                         </Route>
-                        <Route path="/shipments">
+                        <Route path="/logixboard-frontend-challenge/shipments">
                             <ShipmentsPage />
                         </Route>
                     </Switch>
